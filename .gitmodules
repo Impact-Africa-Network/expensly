@@ -1,0 +1,6 @@
+[submodule "src/ian_account"]
+	path = src/ian_account
+	url = https://github.com/Impact-Africa-Network/ian-account
+[submodule "src/ian_auth"]
+	path = src/ian_auth
+	url = https://github.com/Impact-Africa-Network/ian_auth

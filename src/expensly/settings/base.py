@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
-    'rest_framework'
+    'rest_framework',
+
+    # ian Templates
+    'ian_account',
+    'ian_auth',
 ]
 
 # AUTH_USER_MODEL = "ian_account.User"
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "ian_auth.middleware.IANAuthMiddleware",  # ian_auth middleware
 ]
 
 ROOT_URLCONF = 'expensly.urls'
