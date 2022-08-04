@@ -1,32 +1,62 @@
 # Set up
 
-1. Create and activate virtual environment
+1.  Clone locally
 
-   ```bash
-   pipenv --python 3.10
-   
-   pipenv shell
-   ```
-3. Install django
+        git clone --recurse-submodules -j8  https://github.com/Impact-Africa-Network/expensly.git
 
-   ```bash
-   
-   pipenv install django
-   ```
-5. Start project using this template, ensuring to replace `ian_test_proj` with the appropriate project name on the command below:
+2.  Create and activate virtual environment (Use `pipenv`)
 
-    ```bash
-    django-admin startproject --template https://github.com/Impact-Africa-Network/ian-django-template/archive/main.zip ian_test_proj .
-    ```
-4. Rename all the `.template` files by removing the `.template` extensions
+        pipenv --python 3.10
 
-5. Copy the contents of `example.env` to `.env`
+        pipenv shell
 
-    ```bash
-    
-       cp example.env .env
-     ```
+        pipenv install
 
-6. Populate the `.env` with real values.
+3.  Setup Database and Database User
 
-7. Setup your database, and run migrations.
+        psql
+
+        > create database expensly;
+
+        > create role tapin with password 'expensly';
+
+        > alter role expensly with login;
+
+        > grant all on database expensly to expensly;
+
+4.  Copy the contents of `example.env` to `.env` and populate the values appropriately.
+
+        cp example.env .env
+
+5.  Setup submodules
+
+This Project relies on the following submodules:
+
+`ian_account` - https://github.com/Impact-Africa-Network/ian-account (branch: `feat/expensly`)
+
+`ian_auth` - https://github.com/Impact-Africa-Network/ian_auth. (branch: `feat/expensly`)
+
+i. Initialize submodules
+
+        git submodule init
+
+ii. Fetch and update submodules
+
+        git submodule update --remote --recursive
+
+iii. Check out to the respective branches
+
+        cd src/ian_auth
+
+        git checkout feat/expensly
+
+
+        cd src/ian_account
+
+        git checkout feat/expensly
+
+6.  Run migrations
+
+        ./manage.py makemigrations
+
+        ./manage.py migrate
