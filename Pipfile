@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+google-cloud-vision = "*"
+google-cloud-core = "*"
+sentry-sdk = "*"
+requests = "*"
+psycopg2-binary = "*"
+django-filter = "*"
+pillow = "*"
+simplejson = "*"
+python-decouple = "*"
+boto3 = "*"
+channels = "*"
+gunicorn = "*"
+cryptography = "*"
+django-storages = "*"
+
+[dev-packages]
+pyyaml = "*"
+uritemplate = "*"
+
+[requires]
+python_version = "3.10"
