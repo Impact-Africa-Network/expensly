@@ -60,3 +60,11 @@ iii. Check out to the respective branches
         ./manage.py makemigrations
 
         ./manage.py migrate
+
+### Authors
+
+1. Kefa
+2. Kabochi
+3. Innocent
+
+## Hat tip to everyone involved.
