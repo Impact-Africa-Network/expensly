@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "==4.0"
 djangorestframework = "*"
 django-cors-headers = "*"
 google-cloud-vision = "*"
@@ -21,6 +21,8 @@ channels = "*"
 gunicorn = "*"
 cryptography = "*"
 django-storages = "*"
+django-ipware = "*"
+pycryptodome = "*"
 
 [dev-packages]
 pyyaml = "*"

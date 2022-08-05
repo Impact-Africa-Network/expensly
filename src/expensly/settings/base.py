@@ -47,9 +47,12 @@ INSTALLED_APPS = [
     # ian Templates
     'ian_account',
     'ian_auth',
+
+    # my APP_DIRS
+    "expensly.apps.wallet"
 ]
 
-# AUTH_USER_MODEL = "ian_account.User"
+AUTH_USER_MODEL = "ian_account.User"
 
 
 MIDDLEWARE = [
@@ -140,3 +143,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+IAN_ENCRYPTION_KEY=config('IAN_ENCRYPTION_KEY')
+X_IAN_TOKEN=config('X_IAN_TOKEN')

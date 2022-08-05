@@ -18,7 +18,7 @@
 
         > create database expensly;
 
-        > create role tapin with password 'expensly';
+        > create role expensly with password 'expensly';
 
         > alter role expensly with login;
 
