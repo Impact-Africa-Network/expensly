@@ -115,14 +115,15 @@ class Request(models.Model):
     objects = SoftDeleteManager()
     all_objects = GetAllObjects()
 
+
+    class Meta:
+        ordering = ("-timestamp",)
+
     def soft_delete(self):
         self.deleted_at = datetime.datetime.utcnow()
         self.is_active = False
         self.save()
 
-
-    class Meta:
-        ordering = ("-timestamp",)
 
 
 

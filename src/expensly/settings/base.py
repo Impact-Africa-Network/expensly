@@ -64,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "ian_auth.middleware.IANAuthMiddleware",  # ian_auth middleware
+    "expensly.middleware.ExpenslyYusaAuthenticationMiddleware",  # expensly middleware
+
 ]
 
 ROOT_URLCONF = 'expensly.urls'
